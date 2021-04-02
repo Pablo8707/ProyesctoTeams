@@ -19,7 +19,7 @@ if ($setup -like 'setup'){
 if ($setup -like 'variable.txt'){
 	Remove-Item -Path 'C:\Setup\variable.txt'} 
 
- $username = 'sonda_usuarios\' + (Read-Host 'Por Favor Ingrese Su Nombre de Usuario Administrador')
+ $username = (Read-Host 'Por Favor Ingrese Su Nombre de Usuario Administrador')
 
  $Password = (Read-Host -AsSecureString 'Por Favor Ingrese su Contraseña')
  Write-Output ' '
