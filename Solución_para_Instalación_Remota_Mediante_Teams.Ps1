@@ -18,8 +18,9 @@ if ($setup -like 'setup'){
  $setup = (get-childitem C:\Setup)
 if ($setup -like 'variable.txt'){
 	Remove-Item -Path 'C:\Setup\variable.txt'} 
+$dominio = (Get-WmiObject Win32_ComputerSystem).Domain
 
- $username = (Read-Host 'Por Favor Ingrese Su Nombre de Usuario Administrador')
+ $username = $dominio + '\' + (Read-Host 'Por Favor Ingrese Su Nombre de Usuario Administrador')
 
  $Password = (Read-Host -AsSecureString 'Por Favor Ingrese su Contraseña')
  Write-Output ' '
